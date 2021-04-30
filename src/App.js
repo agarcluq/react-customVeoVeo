@@ -17,12 +17,10 @@ export default function App() {
   // Añadir palabra
   const addWord = word => {
     setWord(word);
-    // inputWord.current.value=''
   };
 
   useEffect(()=>{
   inputWord.current.value='';
-  // inputGuess.current.value='';
   },[word])
 
   // Adivina la palabra
