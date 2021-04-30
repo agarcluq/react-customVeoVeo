@@ -1,0 +1,13 @@
+h1,p,h2 {
+  font-family: Lato;
+}
+
+.wordGuess{
+  background-color: #ccc;
+  padding: 10px;
+}
+.wordGuess--marginTop{
+  margin-top:20px;
+  background-color: whitesmoke;
+  border:black 2px solid
+}
