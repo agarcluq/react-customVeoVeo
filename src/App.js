@@ -1,27 +1,17 @@
-import React, { useState, useRef,useEffect, useReducer } from "react";
+import React, { useState, useRef,useEffect } from "react";
+import useCounter from './hooks/useCounter';
 import "./style.css";
 import Gamer from "./Gamer.js";
-const initialState = 0;
-const reducer = (state, action) => {
-  switch (action) {
-    case "increment":
-      return state + 1;
-    case "decrement":
-      return state - 1;
-    case "reset":
-      return 0;
-    default:
-      throw new Error("Unexpected action");
-  }
-};
+
+
 /**
  * Componente adivina la palabra
  */
 export default function App() {
-  const [totalAttempts, dispatch] = useReducer(reducer, initialState);
   const [word, setWord] = useState("");
   const [show, setShow] = useState(false);
   const [win, setWin] = useState(false);
+  const [counter, increment, reset] = useCounter(0);
   const inputGuess = useRef();
   const inputWord = useRef()
   // Añadir palabra
@@ -82,7 +72,7 @@ export default function App() {
         >
           Enviar
         </button>
-        <p>Total de intentos: {totalAttempts}</p>
+        <p>Total de intentos: {counter}</p>
         {show && <p>Perdiste: La palabra es {word}</p>}
         {win && <p>Ganaste, ahora tu eres el jugador 1</p>}
   
