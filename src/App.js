@@ -29,9 +29,9 @@ export default function App() {
   const GuessWord = wordGuess => {
     if (word === wordGuess) {
       setWin(true);
-      dispatch("reset");
+      reset()
     } else {
-      dispatch("increment");
+     increment()
     }
     inputGuess.current.value=''
   };
